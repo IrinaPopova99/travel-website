@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
     <title>Travel</title>
 </head>
+
 <body>
     <section class="showcase">
         <header>
@@ -18,7 +24,7 @@
         <div class="text">
             <h2>Never Stop</h2>
             <h3>Exploring The World</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Sunt molestias cupiditate quibusdam laudantium at iure quia dignissimos qui pariatur ipsum.</p>
             <a href="#">Explore</a>
         </div>
@@ -29,14 +35,96 @@
     </section>
     <div class="menu">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li><a href="./pages/profile/profile.html">Account</a></li>
+            <li><a href="./pages/forum/forum.html">Forum</a></li>
+            <li><a href="#login" data-bs-toggle="modal" data-bs-target="#login">Login</a></li>
+            <li><a href="#signin" class="sign-in-link" data-bs-toggle="modal" data-bs-target="#signin">Sign In</a>
+            </li>
         </ul>
     </div>
+
+    <div class="modal fade" tabindex="-1" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">LOGIN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="container-fluid">
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputEmailLogin" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmailLogin" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPasswordLogin" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPasswordLogin" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="nameLogin" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="nameLogin" placeholder="1234 Main St" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="surnameLogin" class="form-label">Surname</label>
+                                <input type="text" class="form-control" id="surnameLogin" placeholder="1234 Main St" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputCountryLogin" class="form-label">Country</label>
+                                <input type="text" class="form-control" id="inputCountryLogin" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="inputBirthdayLogin" class="form-label">Birthday</label>
+                                <input type="date" class="form-control" id="inputBirthdayLogin" required>
+
+                            </div>
+                            <div class="col-12">
+                                <label for="formFile" class="form-label">Add your photo</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                            <div class="modal-footer">
+                                <button class="common-button col-3 justify-content-end" type="submit"
+                                    data-bs-toggle="modal" data-bs-target="#login">Login</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="signin">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">SIGN IN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="container-fluid">
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputEmailLogin" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmailLogin" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPasswordLogin" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPasswordLogin" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="common-button col-3 justify-content-end" type="submit"
+                                    data-bs-toggle="modal" data-bs-target="#login">Sign in</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
     <script>
         const menuToggle = document.querySelector('.toggle'),
             showcase = document.querySelector('.showcase');
@@ -46,4 +134,5 @@
         });
     </script>
 </body>
+
 </html>
