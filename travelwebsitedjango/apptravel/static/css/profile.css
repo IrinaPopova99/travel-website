@@ -1,0 +1,13 @@
+.avatar-photo {
+    margin-right: 60px;
+}
+.avatar-photo img {
+    border-radius: 180px;
+}
+.info .fullname {
+    font-size: 3em;
+}
+.additional-information__item {
+    display: flex;
+    margin-bottom: 25px;
+}

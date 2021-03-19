@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--{% load i18n static %}-->
+
+    <section class="showcase">
+        <header>
+            <h2 class="logo">Travel</h2>
+            <div class="toggle"></div>
+        </header>
+        <video src="{% static 'video/explore.mp4' %}" muted loop autoplay></video>
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>Never Stop</h2>
+            <h3>Exploring The World</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Sunt molestias cupiditate quibusdam laudantium at iure quia dignissimos qui pariatur ipsum.</p>
+            <a href="#">Explore</a>
+        </div>
+        <ul class="social">
+            <li><a href="#"><img src="{% static 'img/vk.svg' %}" alt=""></a></li>
+            <li><a href="#"><img src="{% static 'img/instagram.svg' %}" alt=""></a></li>
+        </ul>
+    </section>
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'profile' %}">Account</a></li>
+            <li><a href="{% url 'forum' %}">Forum</a></li>
+            <li><a href="#login" data-bs-toggle="modal" data-bs-target="#login">Login</a></li>
+            <li><a href="#signin" class="sign-in-link" data-bs-toggle="modal" data-bs-target="#signin">Sign In</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">LOGIN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="container-fluid">
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputUsernameLogin" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="inputUsernameLogin" required maxlength="50">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPasswordLogin" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPasswordLogin" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="nameLogin" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="nameLogin" placeholder="1234 Main St" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="surnameLogin" class="form-label">Surname</label>
+                                <input type="text" class="form-control" id="surnameLogin" placeholder="1234 Main St" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputCountryLogin" class="form-label">Country</label>
+                                <input type="text" class="form-control" id="inputCountryLogin" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="inputBirthdayLogin" class="form-label">Birthday</label>
+                                <input type="date" class="form-control" id="inputBirthdayLogin" required>
+
+                            </div>
+                            <div class="col-12">
+                                <label for="formFile" class="form-label">Add your photo</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                            <div class="modal-footer">
+                                <button class="common-button col-3 justify-content-end" type="submit"
+                                    data-bs-toggle="modal" data-bs-target="#login">Login</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="signin">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">SIGN IN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="container-fluid">
+                    <div class="modal-body">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputUsernameSignIn" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="inputUsernameSignIn" required maxlength="50">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPasswordSignIn" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPasswordSignIn" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="common-button col-3 justify-content-end" type="submit"
+                                    data-bs-toggle="modal" data-bs-target="#signin">Sign in</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.toggle'),
+            showcase = document.querySelector('.showcase');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            showcase.classList.toggle('active');
+        });
+    </script>
+{% endblock %}
